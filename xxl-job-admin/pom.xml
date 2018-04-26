@@ -32,6 +32,7 @@
             <version>${spring.version}</version>
         </dependency>
         <!-- springframe end -->
+
         <!-- aspectjweaver (support spring aop) -->
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -142,5 +143,15 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <finalName>xxl-job-admin</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 
 </project>
