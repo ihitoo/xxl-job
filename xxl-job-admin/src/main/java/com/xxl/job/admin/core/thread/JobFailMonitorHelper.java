@@ -138,7 +138,9 @@ public class JobFailMonitorHelper {
 			"         <td>"+ I18nUtil.getString("jobconf_monitor_alarm_type") +"</td>\n" +
 			"      </tr>\n" +
 			"   <tbody>\n" +
-			"</table>";
+			"</table>"+
+			"<h5>" + I18nUtil.getString("jobconf_monitor_log") + "：</span>" +
+			"<br>{3}";
 
 	/**
 	 * fail alarm
@@ -156,7 +158,7 @@ public class JobFailMonitorHelper {
 				XxlJobGroup group = XxlJobDynamicScheduler.xxlJobGroupDao.load(Integer.valueOf(info.getJobGroup()));
 
 				String title = I18nUtil.getString("jobconf_monitor");
-				String content = MessageFormat.format(mailBodyTemplate, group!=null?group.getTitle():"null", info.getId(), info.getJobDesc());
+				String content = MessageFormat.format(mailBodyTemplate, group!=null?group.getTitle():"null", info.getId(), info.getJobDesc(),jobLog.getTriggerMsg());
 
 				MailUtil.sendMail(email, title, content);
 			}
