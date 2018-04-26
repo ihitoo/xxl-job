@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * @author xuxueli 2017-04-28
  */
 @Configuration
-@ComponentScan(basePackages = "com.xxl.job.executor.service.jobhandler")
+@ComponentScan(basePackages = "com.xxl.job.executor.jobhandler")
 public class XxlJobConfig {
     private Logger logger = LoggerFactory.getLogger(XxlJobConfig.class);
 
@@ -51,7 +51,6 @@ public class XxlJobConfig {
         xxlJobExecutor.setAccessToken(accessToken);
         xxlJobExecutor.setLogPath(logPath);
         xxlJobExecutor.setLogRetentionDays(logRetentionDays);
-
         return xxlJobExecutor;
     }
 
