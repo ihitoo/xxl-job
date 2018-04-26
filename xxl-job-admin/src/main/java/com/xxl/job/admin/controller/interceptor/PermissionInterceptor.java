@@ -53,10 +53,7 @@ public class PermissionInterceptor extends HandlerInterceptorAdapter {
 	}
 	public static boolean ifLogin(HttpServletRequest request){
 		String indentityInfo = CookieUtil.getValue(request, LOGIN_IDENTITY_KEY);
-		if (indentityInfo==null || !LOGIN_IDENTITY_TOKEN.equals(indentityInfo.trim())) {
-			return false;
-		}
-		return true;
+		return !(indentityInfo == null || !LOGIN_IDENTITY_TOKEN.equals(indentityInfo.trim()));
 	}
 
 

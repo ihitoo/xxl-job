@@ -8,7 +8,7 @@
             <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} xxl-job-admin [%c]-[%t]-[%M]-[%L]-[%p] %m%n"/>
 		</layout>
 	</appender>
-	
+
     <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
         <param name="file" value="/data/applogs/xxl-job/xxl-job-admin.log"/>
         <param name="append" value="true"/>
